@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
   "name": "news",
-=======
-  "name": "portfolio",
->>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -56,10 +52,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "husky": "^9.1.7",
-<<<<<<< HEAD
     "netlify-cli": "^20.0.2",
-=======
->>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
     "postcss": "^8",
     "tailwindcss": "^3.3.0",
     "typescript": "^5"
