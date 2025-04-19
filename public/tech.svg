@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="techGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00B4DB"/>
+      <stop offset="100%" style="stop-color:#0083B0"/>
+    </linearGradient>
+  </defs>
+  <path d="M24 4L44 24L24 44L4 24L24 4Z" fill="url(#techGradient)"/>
+  <path d="M24 12L36 24L24 36L12 24L24 12Z" fill="url(#techGradient)"/>
+</svg> 
