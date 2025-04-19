@@ -13,6 +13,7 @@ service cloud.firestore {
         && resource.data.uid == request.auth.uid;
     }
     
+<<<<<<< HEAD
     // Reading history rules
     match /readingHistory/{docId} {
       allow read: if request.auth != null && docId.matches(request.auth.uid + '_.*');
@@ -25,6 +26,8 @@ service cloud.firestore {
       allow write: if request.auth != null && userId == request.auth.uid;
     }
     
+=======
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
     // Default deny all
     match /{document=**} {
       allow read, write: if false;

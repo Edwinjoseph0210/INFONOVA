@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 from fastapi import FastAPI, HTTPException, BackgroundTasks, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+=======
+from fastapi import FastAPI, HTTPException, BackgroundTasks
+from fastapi.middleware.cors import CORSMiddleware
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 from typing import List, Optional
@@ -15,7 +20,10 @@ import shutil
 import time
 import asyncio
 from concurrent.futures import ThreadPoolExecutor
+<<<<<<< HEAD
 from .db_sync import sync_news_to_django
+=======
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
 
 app = FastAPI()
 
@@ -31,6 +39,7 @@ app.add_middleware(
 @app.get("/news")
 async def get_news():
     try:
+<<<<<<< HEAD
         # Fetch fresh news
         news_items = []
         
@@ -67,6 +76,11 @@ async def get_news():
         sync_news_to_django(news_data)
         
         return news_data
+=======
+        with open(os.path.join(os.path.dirname(os.path.dirname(__file__)), "news_cache.json"), "r") as f:
+            news_data = json.load(f)
+            return news_data
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -130,6 +144,7 @@ def text_to_speech(text, filename):
     
     return f"/static/{filename}"
 
+<<<<<<< HEAD
 def clean_content(content):
     if not content:
         return ""
@@ -147,6 +162,8 @@ def clean_content(content):
     content = ' '.join(content.split())
     return content
 
+=======
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
 def summarize_news(title, content):
     if not content or content == "Content not available.":
         return "Summary not available due to missing content."
@@ -167,12 +184,20 @@ Focus on the key points and main message. Make it clear and easy to understand."
                 return response.text.strip()
 
         # Fallback to simple summarization if Gemini fails
+<<<<<<< HEAD
+=======
+        gemini_limit_reached = True
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
         print("Gemini API failed or limit reached. Using local summarization.")
         sentences = content.split('.')
         summary = f"{title}. {' '.join(sentences[:3])}"
         return summary
 
     except Exception as e:
+<<<<<<< HEAD
+=======
+        gemini_limit_reached = True
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
         print(f"Error with Gemini API: {str(e)}")
         # Fallback to simple summarization
         sentences = content.split('.')
@@ -574,7 +599,11 @@ async def scrape_cnn():
 
 # Initialize cache
 NEWS_CACHE = {}
+<<<<<<< HEAD
 CACHE_DURATION = 4000  # 5 minutes
+=======
+CACHE_DURATION = 300  # 5 minutes
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
 
 def quick_scrape_hindustan_times():
     url = "https://www.hindustantimes.com/india-news/"
@@ -668,6 +697,7 @@ def quick_scrape_times_of_india():
         print(f"Error scraping TOI: {str(e)}")
         return []
 
+<<<<<<< HEAD
 def quick_scrape_ndtv():
     url = "https://www.ndtv.com/latest"
     headers = {"User-Agent": "Mozilla/5.0"}
@@ -796,6 +826,8 @@ def quick_scrape_the_hindu():
         print(f"Error scraping The Hindu: {str(e)}")
         return []
 
+=======
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
 @app.get("/")
 async def root():
     return {"message": "News API is running"}
@@ -813,6 +845,11 @@ async def get_categories():
         ]
     }
 
+<<<<<<< HEAD
+=======
+from fastapi import Request
+
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
 @app.get("/news")
 @app.options("/news")
 async def get_news(request: Request, category: str = None):
@@ -827,8 +864,11 @@ async def get_news(request: Request, category: str = None):
         if cache_key in NEWS_CACHE:
             cached_data = NEWS_CACHE[cache_key]
             if current_time - cached_data["timestamp"] < CACHE_DURATION:
+<<<<<<< HEAD
                 # Sync cached data with Django
                 sync_news_to_django(cached_data["data"])
+=======
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
                 return cached_data["data"]
         
         # Fetch fresh news
@@ -858,9 +898,12 @@ async def get_news(request: Request, category: str = None):
             "timestamp": current_time
         }
         
+<<<<<<< HEAD
         # Sync with Django database
         sync_news_to_django(unique_items)
         
+=======
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
         return unique_items
         
     except Exception as e:
@@ -946,6 +989,7 @@ async def get_latest_headlines(request: Request):
         # Fetch fresh news
         news_items = []
         
+<<<<<<< HEAD
         # Try all available sources
         sources = [
             quick_scrape_hindustan_times,
@@ -1007,6 +1051,27 @@ async def get_latest_headlines(request: Request):
         # Return cached data if available
         if cache_key in NEWS_CACHE:
             return NEWS_CACHE[cache_key]["data"]
+=======
+        # Parallel fetch from sources
+        tasks = [
+            quick_scrape_hindustan_times(),
+            quick_scrape_times_of_india()
+        ]
+        
+        for items in tasks:
+            if isinstance(items, list):
+                news_items.extend(items)
+        
+        # Cache results
+        NEWS_CACHE[cache_key] = {
+            "data": news_items,
+            "timestamp": current_time
+        }
+        
+        return news_items
+        
+    except Exception as e:
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
         raise HTTPException(status_code=500, detail=str(e))
 
 # Removed duplicate route handler

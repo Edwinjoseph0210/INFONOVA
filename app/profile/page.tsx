@@ -54,6 +54,7 @@ export default function ProfilePage() {
       await setDoc(doc(db, 'users', user.uid), {
         newsPreferences: selectedCategories
       }, { merge: true });
+<<<<<<< HEAD
       
       // Show loading state for 2 seconds
       await new Promise(resolve => setTimeout(resolve, 2000));
@@ -63,6 +64,12 @@ export default function ProfilePage() {
       console.error('Error saving preferences:', error);
       // Even on error, show success message
       setSaveStatus('success');
+=======
+      setSaveStatus('success');
+    } catch (error) {
+      console.error('Error saving preferences:', error);
+      setSaveStatus('error');
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
     } finally {
       setIsSaving(false);
     }
@@ -123,13 +130,21 @@ export default function ProfilePage() {
                 <div className="flex items-center justify-between">
                   <span className="text-white/60">Account Created</span>
                   <span className="text-white">
+<<<<<<< HEAD
                     {user.metadata.creationTime ? new Date(user.metadata.creationTime).toLocaleDateString() : 'N/A'}
+=======
+                    {new Date(user.metadata.creationTime).toLocaleDateString()}
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <span className="text-white/60">Last Sign In</span>
                   <span className="text-white">
+<<<<<<< HEAD
                     {user.metadata.lastSignInTime ? new Date(user.metadata.lastSignInTime).toLocaleDateString() : 'N/A'}
+=======
+                    {new Date(user.metadata.lastSignInTime).toLocaleDateString()}
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
                   </span>
                 </div>
                 <div className="flex items-center justify-between">
@@ -147,11 +162,15 @@ export default function ProfilePage() {
                 <button
                   onClick={savePreferences}
                   disabled={isSaving}
+<<<<<<< HEAD
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${
                     isSaving ? 'bg-purple-500/50 cursor-not-allowed' : 'bg-purple-500 hover:bg-purple-600'
                   } ${
                     saveStatus === 'success' ? 'bg-green-500' : saveStatus === 'error' ? 'bg-red-500' : ''
                   }`}
+=======
+                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all ${isSaving ? 'bg-purple-500/50 cursor-not-allowed' : 'bg-purple-500 hover:bg-purple-600'} ${saveStatus === 'success' ? 'bg-green-500' : saveStatus === 'error' ? 'bg-red-500' : ''}`}
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
                 >
                   {isSaving ? 'Saving...' : saveStatus === 'success' ? 'Saved!' : saveStatus === 'error' ? 'Error!' : 'Save Preferences'}
                 </button>
@@ -162,11 +181,15 @@ export default function ProfilePage() {
                   <button
                     key={category}
                     onClick={() => handleCategoryToggle(category)}
+<<<<<<< HEAD
                     className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${
                       selectedCategories.includes(category)
                         ? 'bg-purple-500 text-white shadow-lg shadow-purple-500/25'
                         : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'
                     }`}
+=======
+                    className={`px-6 py-2.5 rounded-full text-sm font-medium transition-all ${selectedCategories.includes(category) ? 'bg-purple-500 text-white shadow-lg shadow-purple-500/25' : 'bg-white/5 text-white/60 hover:bg-white/10 hover:text-white'}`}
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
                   >
                     {category}
                   </button>

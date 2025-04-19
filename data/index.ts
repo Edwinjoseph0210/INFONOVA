@@ -86,7 +86,11 @@ export const projects = [
     title: "Latest Headlines",
     des: "Stay informed with our curated selection of top stories from around the world. Breaking news, updates, and in-depth coverage.",
     img: "/first.jpg",
+<<<<<<< HEAD
     iconLists: [],
+=======
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/fm.svg"],
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
     link: "/categories/latest-headlines",
   },
   {
@@ -94,7 +98,11 @@ export const projects = [
     title: "Politics & Global Affairs",
     des: "Comprehensive coverage of political developments, international relations, and policy decisions shaping our world.",
     img: "/second.webp",
+<<<<<<< HEAD
     iconLists: [],
+=======
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/c.svg"],
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
     link: "/categories/politics-global-affairs",
   },
   {
@@ -102,7 +110,11 @@ export const projects = [
     title: "Business & Economy",
     des: "Market insights, economic trends, and business news to keep you informed about the global financial landscape.",
     img: "/third.jpg",
+<<<<<<< HEAD
     iconLists: [],
+=======
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
     link: "/categories/business-economy",
   },
   {
@@ -110,7 +122,11 @@ export const projects = [
     title: "Technology & Innovation",
     des: "Explore the latest in tech, from breakthrough innovations to digital transformation and their impact on society.",
     img: "/forth.jpeg",
+<<<<<<< HEAD
     iconLists: [],
+=======
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/gsap.svg"],
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
     link: "/categories/technology-innovation",
   },
   {
@@ -118,7 +134,11 @@ export const projects = [
     title: "Entertainment & Culture",
     des: "Get the latest updates from the world of entertainment, arts, and cultural events. From movies and music to art exhibitions and festivals.",
     img: "/fifth.jpg",
+<<<<<<< HEAD
     iconLists: [],
+=======
+    iconLists: ["/next.svg", "/tail.svg", "/ts.svg", "/three.svg", "/c.svg"],
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
     link: "/categories/entertainment-culture",
   },
   {
@@ -126,7 +146,11 @@ export const projects = [
     title: "Sports & Athletics",
     des: "Stay up to date with sports news, live match coverage, player updates, and in-depth analysis of major sporting events worldwide.",
     img: "/sixth.jpg",
+<<<<<<< HEAD
     iconLists: [],
+=======
+    iconLists: ["/re.svg", "/tail.svg", "/ts.svg", "/stream.svg", "/fm.svg"],
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
     link: "/categories/sports-athletics",
   }
 ];
@@ -198,27 +222,40 @@ export const workExperience = [
     title: "Breaking News Coverage",
     desc: "Latest updates on the major earthquake that struck the Pacific region, with live reports from the ground.",
     className: "md:col-span-2",
+<<<<<<< HEAD
     thumbnail: "/breaking.svg"
+=======
+    thumbnail: "/exp1.svg",
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
   },
   {
     id: 2,
     title: "Technology Innovation",
     desc: "Revolutionary AI breakthrough: New language model shows human-like understanding in latest scientific tests.",
     className: "md:col-span-2",
+<<<<<<< HEAD
     thumbnail: "/tech.svg"
+=======
+    thumbnail: "/exp2.svg",
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
   },
   {
     id: 3,
     title: "Global Economics",
     desc: "Stock markets reach record highs as new economic policies boost investor confidence worldwide.",
     className: "md:col-span-2",
+<<<<<<< HEAD
     thumbnail: "/economics.svg"
+=======
+    thumbnail: "/exp3.svg",
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
   },
   {
     id: 4,
     title: "Sports Headlines",
     desc: "Historic victory in World Cup final: Underdog team claims championship in dramatic penalty shootout.",
     className: "md:col-span-2",
+<<<<<<< HEAD
     thumbnail: "/sports.svg"
   },
   {
@@ -249,6 +286,10 @@ export const workExperience = [
     className: "md:col-span-2",
     thumbnail: "/culture.svg"
   }
+=======
+    thumbnail: "/exp4.svg",
+  },
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
 ];
 
 export const socialMedia = [

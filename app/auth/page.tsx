@@ -10,8 +10,12 @@ import {
   GoogleAuthProvider,
   signInWithPopup,
   updateProfile,
+<<<<<<< HEAD
   fetchSignInMethodsForEmail,
   sendPasswordResetEmail
+=======
+  fetchSignInMethodsForEmail
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
 } from "firebase/auth";
 import { doc, setDoc, getDoc } from "firebase/firestore";
 import Image from "next/image";
@@ -25,8 +29,11 @@ export default function AuthPage() {
   const [usernameError, setUsernameError] = useState("");
   const [isCheckingUsername, setIsCheckingUsername] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
+<<<<<<< HEAD
   const [resetEmailSent, setResetEmailSent] = useState(false);
   const [isResetting, setIsResetting] = useState(false);
+=======
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
   const router = useRouter();
   const searchParams = useSearchParams();
 
@@ -203,6 +210,7 @@ export default function AuthPage() {
     }
   };
 
+<<<<<<< HEAD
   const handleForgotPassword = async () => {
     if (!email) {
       setError("Please enter your email address");
@@ -229,6 +237,8 @@ export default function AuthPage() {
     }
   };
 
+=======
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
   return (
     <div className="min-h-screen flex items-center justify-center bg-[rgb(4,7,29)] px-4">
       <div className="w-full max-w-md">
@@ -321,6 +331,7 @@ export default function AuthPage() {
                   )}
                 </button>
               </div>
+<<<<<<< HEAD
               {!isSignUp && (
                 <button
                   type="button"
@@ -331,6 +342,8 @@ export default function AuthPage() {
                   {isResetting ? "Sending reset link..." : resetEmailSent ? "Reset link sent! Check your email" : "Forgot password?"}
                 </button>
               )}
+=======
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
             </div>
 
             {error && (
@@ -352,7 +365,10 @@ export default function AuthPage() {
                 setIsSignUp(!isSignUp);
                 setError("");
                 setUsernameError("");
+<<<<<<< HEAD
                 setResetEmailSent(false);
+=======
+>>>>>>> 30a74b5b6ed1499b838acbb40724f91f773a96c0
               }}
               className="text-purple-500 hover:text-purple-400 transition-colors"
             >
